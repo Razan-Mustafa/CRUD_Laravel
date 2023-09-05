@@ -22,7 +22,8 @@
     </style>
 </head>
 <body>
-    <form style="background-color: rgb(52, 179, 210); padding: 20px">
+    <form style="background-color: rgb(52, 179, 210); padding: 20px" action="padd" method="get">
+        @csrf
         <div>
             <div class="form-group col-md-6" >
                 <label for="inputEmail4">Name</label>
@@ -38,7 +39,7 @@
             <input type="text" class="form-control" id="inputAddress" placeholder="Price" name="Price">
         </div>
        
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary">Add Product</button>
     </form>
 </body>
 </html>

@@ -22,9 +22,14 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
-        //
+        $product = new Product;
+   $product->name=$req->name;
+   $product->discription=$req->discription;
+   $product->Price=$req->Price;
+   $product->save();
+
     }
 
     /**
@@ -33,9 +38,10 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+   
+        
     }
 
     /**

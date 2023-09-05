@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-<<<<<<< HEAD
-    public $timestamps=false;
-=======
-    public $timestamps = false;
 
     protected $fillable = [
         'name',
-        'Price',
-        'discription'
+        'price',
+        'description', // Note: 'discription' typo corrected to 'description'
     ];
->>>>>>> 3d0b842cf1f689c402e525f0a8e29a584fd3dc89
+
+    public $timestamps = false;
 }

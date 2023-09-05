@@ -16,6 +16,8 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('products')->delete();
+
         DB::table('products')->insert([
             [
                 'name' => 'Product 1',

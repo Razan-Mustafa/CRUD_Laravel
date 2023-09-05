@@ -8,11 +8,20 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 
 {
+
+    public function index(){
+        $products=Product::all();
+        return view('index',compact('products'));
+    }
+
+    public function destroy(Product $product){
+        $product->delete();
+        return redirect(route('product.index'))->with('success, Product deleted successfully');}
     public function edit(Product $product){
         return view('edit', ['product' => $product]);
     }
 
-<<<<<<< HEAD
+
     /**
      * Show the form for creating a new resource.
      *
@@ -39,7 +48,7 @@ class ProductController extends Controller
    
         
     }
-=======
+
     public function update(Product $product, Request $request){
         $data = $request->validate([
             'name' => 'required',
@@ -48,7 +57,6 @@ class ProductController extends Controller
         ]);
 
         $product->update($data);
->>>>>>> 3d0b842cf1f689c402e525f0a8e29a584fd3dc89
 
         return redirect(route('index'))->with('success', 'Product Updated Succesffully');
 

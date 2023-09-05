@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 
 Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
 Route::put('/product/{product}/edit', [ProductController::class, 'update'])->name('product.update');
@@ -26,3 +27,8 @@ Route::get('/eee', function () {
     return view('edit');
 });
  
+=======
+Route::get('/add', function () {
+    return view('addproduct');
+});
+>>>>>>> 678e5089f4391c8b3bbcd185ed4b7ce0bd13d2b0

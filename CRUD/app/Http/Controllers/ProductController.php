@@ -4,19 +4,15 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+
 class ProductController extends Controller
 
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function edit(Product $product){
+        return view('edit', ['product' => $product]);
     }
 
+<<<<<<< HEAD
     /**
      * Show the form for creating a new resource.
      *
@@ -43,49 +39,19 @@ class ProductController extends Controller
    
         
     }
+=======
+    public function update(Product $product, Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'price' => 'required|decimal:0,2',
+            'description' => 'nullable'
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\test  $test
-     * @return \Illuminate\Http\Response
-     */
-    public function show(test $test)
-    {
-        //
-    }
+        $product->update($data);
+>>>>>>> 3d0b842cf1f689c402e525f0a8e29a584fd3dc89
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\test  $test
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(test $test)
-    {
-        //
-    }
+        return redirect(route('index'))->with('success', 'Product Updated Succesffully');
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\test  $test
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, test $test)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\test  $test
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(test $test)
-    {
-        //
+    
     }
 }

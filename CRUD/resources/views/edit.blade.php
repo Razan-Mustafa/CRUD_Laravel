@@ -29,11 +29,11 @@
         
         <div>
             <label>Price</label>
-            <input type="text" name="price" placeholder="Price" value="{{$product->price}}" />
+            <input type="text" name="Price" placeholder="Price" value="{{$product->Price}}" />
         </div>
         <div>
             <label>Description</label>
-            <input type="text" name="description" placeholder="Description" value="{{$product->description}}" />
+            <input type="text" name="discription" placeholder="Description" value="{{$product->discription}}" />
         </div>
         <div>
             <input type="submit" value="Update" />
